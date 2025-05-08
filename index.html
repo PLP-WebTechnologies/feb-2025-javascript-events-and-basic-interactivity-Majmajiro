@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Interactive Event Handling Playground</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>My Interactive Event Handling Playground</h1>
+        <p>Explore interactive elements, event handling, and form validation</p>
+      </header>
+
+      <div class="tabs">
+        <div class="tab-list">
+          <button class="tab-trigger active" data-tab="events">Event Handling</button>
+          <button class="tab-trigger" data-tab="interactive">Interactive Elements</button>
+          <button class="tab-trigger" data-tab="forms">Form Validation</button>
+        </div>
+
+        <div class="tab-content">
+          <!-- Event Handling Tab -->
+          <div class="tab-pane active" id="events">
+            <h2>Event Handling Playground</h2>
+            <div class="card-grid">
+              <div class="card">
+                <h3>Click Events</h3>
+                <p>Button has been clicked <span id="click-count">0</span> times</p>
+                <button id="click-button" class="hover-lift">Click Me</button>
+              </div>
+
+              <div class="card">
+                <h3>Hover Events</h3>
+                <p>State: <span id="hover-state">Not hovering</span></p>
+                <div id="hover-area" class="hover-area">
+                  Hover over me!
+                </div>
+              </div>
+
+              <div class="card">
+                <h3>Keyboard Events</h3>
+                <p>Press any key on your keyboard</p>
+                <div class="key-display">
+                  Key pressed: <span id="key-pressed" class="key-code">None</span>
+                </div>
+              </div>
+
+              <div class="card">
+                <h3>Secret Action</h3>
+                <p>Press and hold for a secret...</p>
+                <button id="secret-button" class="secret-button">Hold me down...</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Elements Tab -->
+          <div class="tab-pane" id="interactive">
+            <h2>Interactive Elements</h2>
+            
+            <div class="card">
+              <h3>Dynamic Button</h3>
+              <button id="dynamic-button" class="bg-primary">Click to Change</button>
+            </div>
+
+            <div class="card">
+              <h3>Image Gallery</h3>
+              <div class="image-gallery">
+                <div class="gallery-container">
+                  <img src="https://images.pexels.com/photos/17483809/pexels-photo-17483809/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-represents-how-ai-accountability-is-a-strong-foundation-in-a-world-of-unpredictability-it-was-created-by-champ-panupon.png?auto=compress&cs=tinysrgb&w=600" alt="Abstract colorful shapes" class="gallery-image active" width="500" height="400"/>
+                  <img src="https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Mountain landscape" class="gallery-image" width="500" height="300"/>
+                  <img src="https://images.pexels.com/photos/1298684/pexels-photo-1298684.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Ocean waves" class="gallery-image" width="500" height="300"/>
+                </div>
+                <div class="gallery-controls">
+                  <button id="prev-image" class="gallery-control">&lt;</button>
+                  <div class="gallery-indicators">
+                    <button class="indicator active" data-index="0"></button>
+                    <button class="indicator" data-index="1"></button>
+                    <button class="indicator" data-index="2"></button>
+                  </div>
+                  <button id="next-image" class="gallery-control">&gt;</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Tabs</h3>
+              <div class="nested-tabs">
+                <div class="nested-tab-list">
+                  <button class="nested-tab-trigger active" data-tab="tab1">Tab 1</button>
+                  <button class="nested-tab-trigger" data-tab="tab2">Tab 2</button>
+                  <button class="nested-tab-trigger" data-tab="tab3">Tab 3</button>
+                </div>
+                <div class="nested-tab-content">
+                  <div class="nested-tab-pane active" id="tab1">
+                    <h4>First Tab Content</h4>
+                    <p>This is the content for the first tab. Tabs are great for organizing content!</p>
+                  </div>
+                  <div class="nested-tab-pane" id="tab2">
+                    <h4>Second Tab Content</h4>
+                    <p>Here's some different content in the second tab. You can switch between them!</p>
+                  </div>
+                  <div class="nested-tab-pane" id="tab3">
+                    <h4>Third Tab Content</h4>
+                    <p>And this is the third tab's content. Tabs help keep your interface clean and organized.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Accordion</h3>
+              <div class="accordion">
+                <div class="accordion-item">
+                  <button class="accordion-trigger">What are event handlers?</button>
+                  <div class="accordion-content">
+                    <p>Event handlers are functions that get executed in response to specific events like 
+                    clicks, keypresses, or form submissions. They allow you to create interactive web applications.</p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <button class="accordion-trigger">How do interactive elements work?</button>
+                  <div class="accordion-content">
+                    <p>Interactive elements use JavaScript event listeners to respond to user actions.
+                    They can change appearance, trigger animations, or update content dynamically.</p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <button class="accordion-trigger">Why is form validation important?</button>
+                  <div class="accordion-content">
+                    <p>Form validation ensures that user-submitted data is in the correct format before processing.
+                    It improves data quality, enhances security, and provides a better user experience.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Validation Tab -->
+          <div class="tab-pane" id="forms">
+            <h2>Form Validation</h2>
+            <div class="card">
+              <form id="validation-form" class="validation-form">
+                <!-- Name field -->
+                <div class="form-group">
+                  <div class="form-label">
+                    <label for="name">Name</label>
+                    <span id="name-feedback" class="feedback"></span>
+                  </div>
+                  <input type="text" id="name" name="name" placeholder="Enter your full name" />
+                </div>
+                
+                <!-- Email field -->
+                <div class="form-group">
+                  <div class="form-label">
+                    <label for="email">Email</label>
+                    <span id="email-feedback" class="feedback"></span>
+                  </div>
+                  <input type="email" id="email" name="email" placeholder="example@email.com" />
+                </div>
+                
+                <!-- Password field -->
+                <div class="form-group">
+                  <div class="form-label">
+                    <label for="password">Password</label>
+                    <span id="password-feedback" class="feedback"></span>
+                  </div>
+                  <input type="password" id="password" name="password" placeholder="Create a strong password" />
+                  
+                  <!-- Password strength indicators -->
+                  <div id="password-requirements" class="password-requirements hidden">
+                    <p>Password requirements:</p>
+                    <ul>
+                      <li id="req-length"><span class="req-icon">✗</span> At least 8 characters</li>
+                      <li id="req-uppercase"><span class="req-icon">✗</span> Contains uppercase letter</li>
+                      <li id="req-lowercase"><span class="req-icon">✗</span> Contains lowercase letter</li>
+                      <li id="req-number"><span class="req-icon">✗</span> Contains number</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <!-- Confirm Password field -->
+                <div class="form-group">
+                  <div class="form-label">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <span id="confirm-password-feedback" class="feedback"></span>
+                  </div>
+                  <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" />
+                </div>
+                
+                <button type="submit" class="submit-button">Submit Form</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <p>Built with HTML, CSS, and JavaScript</p>
+        <p>Click around to discover all the interactive features!</p>
+        <p class="secret-hint">Psst... There's a hidden feature if you press and hold the secret button!</p>
+      </footer>
+    </div>
+    
+    <div id="toast" class="toast">
+      <div class="toast-content">
+        <h4 id="toast-title"></h4>
+        <p id="toast-message"></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
